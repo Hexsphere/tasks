@@ -25,10 +25,13 @@
   <div class="project--tasks-box">
     <h4>Tasks</h4>
 
-    <div class="project--tasks-state-box">
+    <div
+      class="project--tasks-state-box"
+      *ngIf="notCompletedTasks().length > 0"
+    >
       <h5>To do</h5>
 
-      <div *ngIf="notCompletedTasks().length > 0" class="project--tasks">
+      <div class="project--tasks">
         <app-task
           *ngFor="let task of notCompletedTasks()"
           [task]="task"
@@ -37,10 +40,10 @@
       </div>
     </div>
 
-    <div class="project--tasks-state-box">
+    <div class="project--tasks-state-box" *ngIf="completedTasks().length > 0">
       <h5>Completed</h5>
 
-      <div *ngIf="completedTasks().length > 0" class="project--tasks">
+      <div class="project--tasks">
         <app-task
           *ngFor="let task of completedTasks()"
           [task]="task"
