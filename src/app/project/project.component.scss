@@ -134,9 +134,11 @@
     }
 
     span {
+      font-family: ui-rounded, system-ui, -apple-system, "Inter", "Segoe UI",
+        sans-serif;
       font-size: 1.8rem;
-      font-weight: 500;
-      color: var(--color-spanish-gray);
+      font-weight: 400;
+      color: var(--color-silver-metallic);
     }
   }
 
