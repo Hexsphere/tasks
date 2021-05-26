@@ -13,21 +13,49 @@
   }
 
   &--card-header {
-    display: grid;
-    grid-template-columns: max-content auto;
-    grid-template-rows: repeat(2, max-content);
-    row-gap: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    input {
+      width: 64rem;
+
+      padding: 1rem 1.4rem;
+
+      background-color: transparent;
+      border: 2.4px solid transparent;
+      border-radius: 8px;
+
+      font-family: inherit;
+      font-size: 2.8rem;
+      font-weight: 700;
+
+      outline: none;
+
+      transition: 220ms ease;
+      transition-property: transform, border, color;
+
+      transform: translateX(-1.2rem);
+
+      &:hover,
+      &:focus {
+        transform: translateX(0);
+      }
+
+      &:hover {
+        border-color: var(--color-silver-metallic);
+      }
+
+      &:focus {
+        border-color: var(--color-oxford-blue);
+      }
+    }
 
     button {
       cursor: pointer;
 
       width: 3.2rem;
       height: 3.2rem;
-
-      grid-row: 1 / 3;
-      grid-column: 2 / 3;
-      align-self: center;
-      justify-self: end;
 
       border: none;
       background-color: transparent;
@@ -72,51 +100,6 @@
     }
   }
 
-  &--title {
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    align-items: center;
-    column-gap: 1rem;
-
-    h3 {
-      font-size: 2.8rem;
-      font-weight: 700;
-    }
-
-    input {
-      width: 64rem;
-
-      padding: 1rem 1.4rem;
-
-      background-color: transparent;
-      border: 2.4px solid transparent;
-      border-radius: 8px;
-
-      font-family: inherit;
-      font-size: 2.8rem;
-      font-weight: 700;
-
-      outline: none;
-
-      transition: 220ms ease;
-      transition-property: border, color;
-
-      &:hover {
-        border-color: var(--color-silver-metallic);
-      }
-
-      &:focus {
-        border-color: var(--color-oxford-blue);
-      }
-    }
-
-    span {
-      font-size: 2rem;
-      font-weight: 500;
-      color: var(--color-spanish-gray);
-    }
-  }
-
   &--tasks-box {
     display: grid;
     row-gap: 2rem;
@@ -136,9 +119,22 @@
   &--tasks-state-box {
     display: grid;
     row-gap: 2rem;
+  }
+
+  &--state-box-header {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    column-gap: 1rem;
 
     h5 {
       font-size: 2rem;
+      font-weight: 500;
+      color: var(--color-spanish-gray);
+    }
+
+    span {
+      font-size: 1.8rem;
       font-weight: 500;
       color: var(--color-spanish-gray);
     }

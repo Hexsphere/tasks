@@ -5,17 +5,13 @@
       <h5>Home</h5>
     </div> -->
 
-    <div class="project--title">
-      <span>{{ notCompletedTasks().length }}</span>
-      <!-- <h3>{{ project.name }}</h3> -->
-      <input
-        #projectName
-        type="text"
-        [(ngModel)]="project.name"
-        (keyup.enter)="updateProject()"
-        (blur)="updateProject()"
-      />
-    </div>
+    <input
+      #projectName
+      type="text"
+      [(ngModel)]="project.name"
+      (keyup.enter)="updateProject()"
+      (blur)="updateProject()"
+    />
 
     <button (click)="removeProject(project)">
       <svg><use href="../../assets/img/trash.svg#trash"></use></svg>
@@ -29,7 +25,10 @@
       class="project--tasks-state-box"
       *ngIf="notCompletedTasks().length > 0"
     >
-      <h5>To do</h5>
+      <div class="project--state-box-header">
+        <h5>To do</h5>
+        <span>{{ notCompletedTasks().length }}</span>
+      </div>
 
       <div class="project--tasks">
         <app-task
@@ -41,7 +40,10 @@
     </div>
 
     <div class="project--tasks-state-box" *ngIf="completedTasks().length > 0">
-      <h5>Completed</h5>
+      <div class="project--state-box-header">
+        <h5>Completed</h5>
+        <span>{{ completedTasks().length }}</span>
+      </div>
 
       <div class="project--tasks">
         <app-task
