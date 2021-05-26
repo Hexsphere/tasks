@@ -8,6 +8,10 @@
   border-radius: 1.6rem;
   background-color: var(--color-ghost-white);
 
+  &.complete {
+    opacity: 0.46;
+  }
+
   &--details {
     display: grid;
     grid-auto-flow: column;
@@ -40,11 +44,15 @@
       transition: 220ms ease;
       transition-property: border, color;
 
-      &:hover {
+      &:disabled {
+        cursor: default;
+      }
+
+      &:hover:not(:disabled) {
         border-color: var(--color-spanish-gray);
       }
 
-      &:focus {
+      &:focus:not(:disabled) {
         border-color: var(--color-independence);
       }
     }
@@ -72,13 +80,17 @@
 
       transition: transform 220ms ease;
 
+      &:disabled {
+        cursor: default;
+      }
+
       svg {
         fill: none;
         stroke: currentColor;
         stroke-width: 2.4px;
       }
 
-      &:hover {
+      &:hover:not(:disabled) {
         transform: translateY(-3px);
       }
     }

@@ -1,4 +1,4 @@
-<div class="task">
+<div class="task" [class.complete]="task.complete">
   <div class="task--details">
     <button class="task--btn task--btn__check-icon" (click)="completeTask()">
       <svg>
@@ -7,16 +7,21 @@
     </button>
 
     <!-- <span></span> -->
-
+    
     <input
       type="text"
+      [disabled]="task.complete"
       [(ngModel)]="task.name"
       (keyup.enter)="updateTask()"
       (blur)="updateTask()"
     />
   </div>
 
-  <button class="task--btn task--btn__icon" (click)="removeTask(task, project)">
+  <button
+    [disabled]="task.complete"
+    class="task--btn task--btn__icon"
+    (click)="removeTask(task, project)"
+  >
     <svg>
       <use href="../../assets/img/trash.svg#trash"></use>
     </svg>

@@ -52,8 +52,12 @@ export class ProjectComponent implements AfterViewInit {
     this.name = '';
   }
 
-  getTasks() {
-    return this.project.tasks.filter((task) => task.complete !== true);
+  completedTasks() {
+    return this.project.tasks.filter((task) => task.complete === true);
+  }
+
+  notCompletedTasks() {
+    return this.project.tasks.filter((task) => task.complete === false);
   }
 
   updateProject() {

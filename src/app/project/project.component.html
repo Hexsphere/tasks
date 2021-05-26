@@ -6,7 +6,7 @@
     </div> -->
 
     <div class="project--title">
-      <span>{{ getTasks().length }}</span>
+      <span>{{ notCompletedTasks().length }}</span>
       <!-- <h3>{{ project.name }}</h3> -->
       <input
         #projectName
@@ -25,15 +25,23 @@
   <div class="project--tasks-box">
     <h4>Tasks</h4>
 
-    <div *ngIf="getTasks().length > 0" class="project--tasks">
+    <div *ngIf="notCompletedTasks().length > 0" class="project--tasks">
       <app-task
-        *ngFor="let task of getTasks()"
+        *ngFor="let task of notCompletedTasks()"
         [task]="task"
         [project]="project"
       ></app-task>
     </div>
 
-    <h5 *ngIf="getTasks().length < 1">No tasks yet!</h5>
+    <div *ngIf="completedTasks().length > 0" class="project--tasks">
+      <app-task
+        *ngFor="let task of completedTasks()"
+        [task]="task"
+        [project]="project"
+      ></app-task>
+    </div>
+
+    <h5 *ngIf="project.tasks.length < 1">No tasks yet!</h5>
   </div>
 
   <button
