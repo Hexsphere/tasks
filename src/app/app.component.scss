@@ -1,0 +1,10 @@
+:host {
+  position: relative;
+
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: repeat(2, max-content) auto;
+
+  background-color: var(--color-ghost-white);
+}

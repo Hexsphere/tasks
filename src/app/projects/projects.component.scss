@@ -1,0 +1,30 @@
+:host {
+  grid-column: 1 / 4;
+}
+
+.projects {
+  &--scrollbar {
+    --scrollbar-padding: 1.6rem;
+    --scrollbar-size: 0.8rem;
+    --scrollbar-thumb-hover-color: rgba(0, 0, 0, 0.4);
+    --scrollbar-thumb-transition: background-color 240ms ease;
+  }
+
+  &--box {
+    box-sizing: border-box;
+
+    margin-bottom: 4rem;
+
+    display: grid;
+    align-content: start;
+    row-gap: 4rem;
+  }
+
+  h1 {
+    place-self: center;
+
+    font-size: 4.6rem;
+    font-weight: bold;
+    color: var(--color-silver-metallic-alt);
+  }
+}

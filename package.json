@@ -11,6 +11,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~12.0.0",
+    "@angular/cdk": "^12.0.1",
     "@angular/common": "~12.0.0",
     "@angular/compiler": "~12.0.0",
     "@angular/core": "~12.0.0",
@@ -18,6 +19,9 @@
     "@angular/platform-browser": "~12.0.0",
     "@angular/platform-browser-dynamic": "~12.0.0",
     "@angular/router": "~12.0.0",
+    "@ngxs/logger-plugin": "^3.7.2",
+    "@ngxs/store": "^3.7.2",
+    "ngx-scrollbar": "^7.5.6",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
@@ -26,6 +30,7 @@
     "@angular-devkit/build-angular": "~12.0.0",
     "@angular/cli": "~12.0.0",
     "@angular/compiler-cli": "~12.0.0",
+    "@ngxs/devtools-plugin": "^3.7.2",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "jasmine-core": "~3.7.0",

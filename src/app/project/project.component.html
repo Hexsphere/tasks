@@ -1,0 +1,59 @@
+<div class="project">
+  <div class="project--card-header">
+    <!-- <div class="project--label">
+      <span></span>
+      <h5>Home</h5>
+    </div> -->
+
+    <div class="project--title">
+      <span>{{ getTasks().length }}</span>
+      <!-- <h3>{{ project.name }}</h3> -->
+      <input
+        #projectName
+        type="text"
+        [(ngModel)]="project.name"
+        (keyup.enter)="updateProject()"
+        (blur)="updateProject()"
+      />
+    </div>
+
+    <button (click)="removeProject(project)">
+      <svg><use href="../../assets/img/trash.svg#trash"></use></svg>
+    </button>
+  </div>
+
+  <div class="project--tasks-box">
+    <h4>Tasks</h4>
+
+    <div *ngIf="getTasks().length > 0" class="project--tasks">
+      <app-task
+        *ngFor="let task of getTasks()"
+        [task]="task"
+        [project]="project"
+      ></app-task>
+    </div>
+
+    <h5 *ngIf="getTasks().length < 1">No tasks yet!</h5>
+  </div>
+
+  <button
+    *ngIf="!newTaskForm"
+    class="project--btn project--btn__secondary"
+    (click)="toggleTaskForm()"
+  >
+    New task
+  </button>
+
+  <div *ngIf="newTaskForm" class="project--new-tasks-box">
+    <div #inputBox class="project--input-box" (click)="toggleTaskForm()">
+      <input #input type="text" [(ngModel)]="name" (keyup.enter)="addTask()" />
+    </div>
+
+    <div class="project--btn-box">
+      <button class="project--btn" (click)="addTask()">Create task</button>
+      <button class="project--btn project--btn__alt" (click)="closeTaskForm()">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>

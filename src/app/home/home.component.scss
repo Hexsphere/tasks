@@ -1,0 +1,12 @@
+:host {
+  width: 100%;
+
+  display: grid;
+  place-items: center;
+
+  h1 {
+    font-size: 4.6rem;
+    font-weight: bold;
+    color: var(--color-silver-metallic-alt);
+  }
+}

@@ -1,0 +1,25 @@
+<div class="modal" [class.show]="modal">
+  <div
+    *ngIf="modalType === 'new project'"
+    class="modal--box modal--box__create-project"
+  >
+    <h3>Create project</h3>
+
+    <div class="modal--text-field">
+      <label for="projectName">Name</label>
+      <input
+        #inputProjectName
+        type="text"
+        [(ngModel)]="name"
+        (keyup.enter)="addProject()"
+      />
+    </div>
+
+    <div class="modal--btn-box">
+      <button class="modal--btn modal--btn__alt" (click)="modal = false">
+        Cancel
+      </button>
+      <button class="modal--btn" (click)="addProject()">Create</button>
+    </div>
+  </div>
+</div>
