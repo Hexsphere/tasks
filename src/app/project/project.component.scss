@@ -133,6 +133,17 @@
     }
   }
 
+  &--tasks-state-box {
+    display: grid;
+    row-gap: 2rem;
+
+    h5 {
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--color-spanish-gray);
+    }
+  }
+
   &--tasks {
     display: grid;
     row-gap: 3rem;
