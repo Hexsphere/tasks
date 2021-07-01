@@ -1,0 +1,32 @@
+<div class="task" [class.complete]="task.complete">
+  <div class="task--details">
+    <button
+      class="task--btn task--btn__check-icon"
+      (click)="updateTask({ complete: !task.complete })"
+    >
+      <svg>
+        <use href="../../assets/img/check-circle.svg#checkCircle"></use>
+      </svg>
+    </button>
+
+    <!-- <span></span> -->
+
+    <input
+      type="text"
+      [disabled]="task.complete"
+      [(ngModel)]="task.name"
+      (keyup.enter)="updateTask({ name: task.name })"
+      (blur)="updateTask({ name: task.name })"
+    />
+  </div>
+
+  <button
+    [disabled]="task.complete"
+    class="task--btn task--btn__icon"
+    (click)="removeTask()"
+  >
+    <svg>
+      <use href="../../assets/img/trash.svg#trash"></use>
+    </svg>
+  </button>
+</div>

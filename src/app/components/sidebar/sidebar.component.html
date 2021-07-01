@@ -1,0 +1,106 @@
+<div class="sidebar" [class.mini]="mini" [class.no-user]="!user">
+  <div class="sidebar--header">
+    <h2 *ngIf="!user">Hexsphere Tasks</h2>
+    <h2 *ngIf="user">
+      Welcome back, <span>{{ userFirstname }}</span>
+    </h2>
+
+    <button
+      class="sidebar--btn sidebar--btn__icon"
+      (click)="toggleSidebar()"
+    >
+      <svg>
+        <use *ngIf="mini" href="../../assets/img/caret-right.svg#caretRight" />
+        <use *ngIf="!mini" href="../../assets/img/caret-left.svg#caretLeft" />
+      </svg>
+    </button>
+  </div>
+
+  <div *ngIf="!user" class="sidebar--btn-box">
+    <button class="sidebar--btn" (click)="login()">Log in</button>
+    <button class="sidebar--btn" (click)="signup()">Sign up</button>
+  </div>
+
+  <div *ngIf="user" class="sidebar--user-card" [class.no-role]="!user.role">
+    <img [src]="userPhotoURL" alt="{{ user.name }} Profile Pic" />
+
+    <h4>{{ user.name }}</h4>
+    <h5 *ngIf="user.role">{{ user.role }}</h5>
+  </div>
+
+  <div class="sidebar--nav">
+    <div
+      class="sidebar--nav-item"
+      routerLink="/dashboard"
+      routerLinkActive="selected"
+    >
+      <svg>
+        <use href="../../assets/img/dashboard.svg#dashboard"></use>
+      </svg>
+      <h3>Dashboard</h3>
+    </div>
+
+    <div
+      class="sidebar--nav-item"
+      routerLink="/calendar"
+      routerLinkActive="selected"
+    >
+      <svg>
+        <use href="../../assets/img/calendar.svg#calendar"></use>
+      </svg>
+      <h3>Calendar</h3>
+    </div>
+
+    <div
+      class="sidebar--nav-item"
+      routerLink="/projects"
+      routerLinkActive="selected"
+    >
+      <svg>
+        <use href="../../assets/img/projects.svg#projects"></use>
+      </svg>
+      <h3>Projects</h3>
+    </div>
+
+    <!-- TODO: Add dynamic links to projects when projects tab is selected -->
+
+    <div
+      class="sidebar--nav-item"
+      routerLink="/tasks"
+      routerLinkActive="selected"
+    >
+      <svg>
+        <use href="../../assets/img/tasks.svg#tasks"></use>
+      </svg>
+      <h3>Tasks</h3>
+    </div>
+
+    <div
+      class="sidebar--nav-item"
+      routerLink="/account"
+      routerLinkActive="selected"
+    >
+      <svg>
+        <use href="../../assets/img/account.svg#account"></use>
+      </svg>
+      <h3>Account</h3>
+    </div>
+  </div>
+
+  <button
+    *ngIf="mini && user"
+    class="sidebar--btn sidebar--btn__log-out"
+    (click)="logout()"
+  >
+    <svg>
+      <use href="../../assets/img/sign-out.svg#signOut"></use>
+    </svg>
+  </button>
+  <button
+    *ngIf="!mini && user"
+    class="sidebar--btn sidebar--btn__log-out"
+    (click)="logout()"
+  >
+    Log out
+  </button>
+</div>

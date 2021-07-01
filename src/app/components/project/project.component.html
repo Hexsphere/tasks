@@ -1,0 +1,81 @@
+<div class="project">
+  <div class="project--card-header">
+    <!-- <div class="project--label">
+      <span></span>
+      <h5>Home</h5>
+    </div> -->
+
+    <input
+      #projectName
+      type="text"
+      [(ngModel)]="project.name"
+      (keyup.enter)="updateProject()"
+      (blur)="updateProject()"
+    />
+
+    <button (click)="removeProject(project)">
+      <svg><use href="../../assets/img/trash.svg#trash"></use></svg>
+    </button>
+  </div>
+
+  <div class="project--tasks-box">
+    <h4>Tasks</h4>
+
+    <div
+      class="project--tasks-state-box"
+      *ngIf="incompleteTasks && incompleteTasks.length > 0"
+    >
+      <div class="project--state-box-header">
+        <h5>To do</h5>
+        <span>{{ incompleteTasks.length }}</span>
+      </div>
+
+      <div class="project--tasks">
+        <app-task
+          *ngFor="let task of incompleteTasks"
+          [task]="task"
+        ></app-task>
+      </div>
+    </div>
+
+    <div
+      class="project--tasks-state-box"
+      *ngIf="completedTasks && completedTasks.length > 0"
+    >
+      <div class="project--state-box-header">
+        <h5>Completed</h5>
+        <span>{{ completedTasks.length }}</span>
+      </div>
+
+      <div class="project--tasks">
+        <app-task
+          *ngFor="let task of completedTasks"
+          [task]="task"
+        ></app-task>
+      </div>
+    </div>
+
+    <h5 *ngIf="tasks && tasks.length < 1">No tasks yet!</h5>
+  </div>
+
+  <button
+    *ngIf="!newTaskForm"
+    class="project--btn project--btn__secondary"
+    (click)="toggleTaskForm()"
+  >
+    New task
+  </button>
+
+  <div *ngIf="newTaskForm" class="project--new-tasks-box">
+    <div #inputBox class="project--input-box" (click)="toggleTaskForm()">
+      <input #input type="text" [(ngModel)]="name" (keyup.enter)="addTask()" />
+    </div>
+
+    <div class="project--btn-box">
+      <button class="project--btn" (click)="addTask()">Create task</button>
+      <button class="project--btn project--btn__alt" (click)="closeTaskForm()">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>

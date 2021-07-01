@@ -1,0 +1,119 @@
+.task {
+  padding: 1.7rem 2.8rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-radius: 1.6rem;
+  background-color: var(--color-ghost-white);
+
+  &.complete {
+    opacity: 0.46;
+  }
+
+  &--details {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: 1.2rem;
+
+    span {
+      width: 1.4rem;
+      height: 1.4rem;
+
+      border-radius: 50%;
+      background-color: var(--color-non-photo-blue);
+    }
+
+    input {
+      width: 42rem;
+
+      padding: 0.8rem 1.2rem;
+
+      background-color: transparent;
+      border: 2.2px solid transparent;
+      border-radius: 8px;
+
+      font-family: inherit;
+      font-size: 2.2rem;
+      font-weight: 500;
+
+      outline: none;
+
+      transition: 220ms ease;
+      transition-property: border, color;
+
+      &:disabled {
+        cursor: default;
+      }
+
+      &:hover:not(:disabled) {
+        border-color: var(--color-spanish-gray);
+      }
+
+      &:focus:not(:disabled) {
+        border-color: var(--color-independence);
+      }
+    }
+  }
+
+  &--btn {
+    cursor: pointer;
+
+    border: none;
+    background-color: transparent;
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+      fill: currentColor;
+      stroke: none;
+    }
+
+    &__icon {
+      width: 3.2rem;
+      height: 3.2rem;
+
+      color: var(--color-independence);
+
+      transition: transform 220ms ease;
+
+      &:disabled {
+        cursor: default;
+      }
+
+      svg {
+        stroke: currentColor;
+        stroke-width: 2.4px;
+      }
+
+      &:hover:not(:disabled) {
+        transform: translateY(-3px);
+      }
+    }
+
+    &__check-icon {
+      // margin-right: 0.8rem;
+
+      width: 3rem;
+      height: 3rem;
+
+      color: var(--color-silver-metallic-alt);
+
+      &:hover {
+        svg {
+          fill: rgba(165, 168, 176, 0.46);
+        }
+      }
+
+      svg {
+        stroke: currentColor;
+        stroke-width: 2.4px;
+
+        transition: fill 260ms ease;
+      }
+    }
+  }
+}

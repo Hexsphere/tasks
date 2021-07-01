@@ -1,0 +1,157 @@
+<div class="modal" [class.show]="showModal$ | async">
+  <div
+    *ngIf="(modalType$ | async) === 'new project'"
+    class="modal--box modal--box__create-project"
+  >
+    <div class="modal--form-box">
+      <h3>Create project</h3>
+
+      <div class="modal--text-field">
+        <label for="projectName">Name</label>
+        <input
+          id="projectName"
+          type="text"
+          [(ngModel)]="name"
+          (keyup.enter)="addProject()"
+        />
+      </div>
+    </div>
+
+    <div class="modal--btn-box">
+      <button class="modal--btn modal--btn__alt" (click)="setModal('', false)">
+        Cancel
+      </button>
+      <button class="modal--btn" (click)="addProject()">Create</button>
+    </div>
+  </div>
+
+  <div
+    *ngIf="(modalType$ | async) === 'login'"
+    class="modal--box modal--box__login"
+  >
+    <div class="modal--form-box">
+      <h3>Log in</h3>
+
+      <div class="modal--text-field">
+        <label for="emailOrUsername">Email or username</label>
+        <input
+          id="emailOrUsername"
+          type="text"
+          [(ngModel)]="emailOrUsername"
+          (keyup.enter)="login()"
+        />
+      </div>
+
+      <div class="modal--text-field">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          [(ngModel)]="password"
+          (keyup.enter)="login()"
+        />
+      </div>
+    </div>
+
+    <button class="modal--btn modal--btn__text">Forgot password?</button>
+
+    <div class="modal--btn-box">
+      <button
+        class="modal--btn modal--btn__alt modal--btn__left"
+        (click)="setModal('signup', true)"
+      >
+        Sign up instead
+      </button>
+
+      <button class="modal--btn modal--btn__alt" (click)="setModal('', false)">
+        Cancel
+      </button>
+      <button class="modal--btn" (click)="login()">Log in</button>
+    </div>
+  </div>
+
+  <div
+    *ngIf="(modalType$ | async) === 'signup'"
+    class="modal--box modal--box__signup"
+  >
+    <div class="modal--form-box">
+      <h3>Create your account</h3>
+
+      <div class="modal--input-row">
+        <div class="modal--text-field">
+          <label for="firstName">First name</label>
+          <input
+            id="firstName"
+            type="text"
+            [(ngModel)]="firstName"
+            (keyup.enter)="signup()"
+          />
+        </div>
+
+        <div class="modal--text-field">
+          <label for="lastName">Last name</label>
+          <input
+            id="lastName"
+            type="text"
+            [(ngModel)]="lastName"
+            (keyup.enter)="signup()"
+          />
+        </div>
+      </div>
+
+      <div class="modal--text-field">
+        <label for="username">Username</label>
+        <input
+          id="username"
+          type="text"
+          [(ngModel)]="username"
+          (keyup.enter)="signup()"
+        />
+      </div>
+
+      <div class="modal--text-field">
+        <label for="email">Email address</label>
+        <input
+          id="email"
+          type="email"
+          [(ngModel)]="email"
+          (keyup.enter)="signup()"
+        />
+      </div>
+
+      <div class="modal--text-field">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          [(ngModel)]="password"
+          (keyup.enter)="signup()"
+        />
+      </div>
+
+      <div class="modal--text-field">
+        <label for="confirmPassword">Confirm password</label>
+        <input
+          id="confirmPassword"
+          type="password"
+          [(ngModel)]="passwordConfirm"
+          (keyup.enter)="signup()"
+        />
+      </div>
+    </div>
+
+    <div class="modal--btn-box">
+      <button
+        class="modal--btn modal--btn__alt modal--btn__left"
+        (click)="setModal('login', true)"
+      >
+        Log in instead
+      </button>
+
+      <button class="modal--btn modal--btn__alt" (click)="setModal('', false)">
+        Cancel
+      </button>
+      <button class="modal--btn" (click)="signup()">Sign up</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+.projects {
+  &--box {
+    box-sizing: border-box;
+
+    margin-bottom: 4rem;
+
+    display: grid;
+    align-content: start;
+    row-gap: 4rem;
+  }
+
+  h1 {
+    place-self: center;
+
+    font-size: 4.6rem;
+    font-weight: bold;
+    color: var(--color-silver-metallic-alt);
+  }
+}

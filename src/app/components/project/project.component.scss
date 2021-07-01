@@ -1,0 +1,241 @@
+.project {
+  padding: 3rem 2.8rem;
+
+  display: grid;
+  row-gap: 3rem;
+
+  border-radius: 1.8rem;
+  background-color: var(--color-off-white);
+
+  svg {
+    stroke: currentColor;
+  }
+
+  &--card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    input {
+      width: 64rem;
+
+      padding: 1rem 1.4rem;
+
+      background-color: transparent;
+      border: 2.4px solid transparent;
+      border-radius: 8px;
+
+      font-family: inherit;
+      font-size: 2.8rem;
+      font-weight: 700;
+
+      outline: none;
+
+      transition: 220ms ease;
+      transition-property: transform, border, color;
+
+      transform: translateX(-1.2rem);
+
+      &:hover,
+      &:focus {
+        transform: translateX(0);
+      }
+
+      &:hover {
+        border-color: var(--color-silver-metallic);
+      }
+
+      &:focus {
+        border-color: var(--color-oxford-blue);
+      }
+    }
+
+    button {
+      cursor: pointer;
+
+      width: 3.2rem;
+      height: 3.2rem;
+
+      border: none;
+      background-color: transparent;
+      color: var(--color-independence);
+
+      transition: transform 240ms ease;
+
+      &:hover {
+        transform: translateY(-3px);
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+
+        stroke: currentColor;
+        stroke-width: 2.4px;
+      }
+    }
+  }
+
+  &--label {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    column-gap: 8px;
+    align-items: center;
+
+    span {
+      width: 1.4rem;
+      height: 1.4rem;
+
+      border-radius: 50%;
+
+      background-color: var(--color-non-photo-blue);
+    }
+
+    h5 {
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--color-spanish-gray);
+    }
+  }
+
+  &--tasks-box {
+    display: grid;
+    row-gap: 2rem;
+
+    h4 {
+      font-size: 2.4rem;
+      font-weight: 600;
+    }
+
+    h5 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--color-independence);
+    }
+  }
+
+  &--tasks-state-box {
+    display: grid;
+    row-gap: 2rem;
+  }
+
+  &--state-box-header {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    column-gap: 1rem;
+
+    h5 {
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--color-spanish-gray);
+    }
+
+    span {
+      font-family: ui-rounded, system-ui, -apple-system, "Inter", "Segoe UI",
+        sans-serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--color-silver-metallic);
+    }
+  }
+
+  &--tasks {
+    display: grid;
+    row-gap: 3rem;
+  }
+
+  &--new-tasks-box {
+    display: grid;
+    place-items: start;
+    row-gap: 2.6rem;
+  }
+
+  &--input-box {
+    cursor: text;
+
+    width: 100%;
+    height: 8rem;
+
+    padding: 1.2rem 1.4rem;
+
+    border: 2.8px solid var(--color-spanish-gray);
+    border-radius: 1rem;
+
+    transition: border 220ms ease;
+
+    &.focus {
+      border: 2.2px solid var(--color-independence);
+    }
+
+    input {
+      width: 100%;
+
+      border: 0;
+
+      font-family: inherit;
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--color-independence);
+
+      outline: none;
+    }
+  }
+
+  &--btn-box {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 2rem;
+  }
+
+  &--btn {
+    cursor: pointer;
+
+    justify-self: start;
+
+    padding: 2rem 2.8rem;
+
+    border: none;
+    border-radius: 1.2rem;
+    background-color: var(--color-oxford-blue);
+
+    font-family: inherit;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-off-white);
+
+    outline: none;
+
+    transition: 280ms ease;
+    transition-property: transform, background-color, color;
+
+    &:hover,
+    &:focus {
+      transform: translateY(-5px);
+
+      background-color: var(--color-oxford-blue-light);
+      color: var(--color-ghost-white);
+    }
+
+    &__alt {
+      background-color: transparent;
+      color: var(--color-independence);
+
+      &:hover,
+      &:focus {
+        background-color: var(--color-ghost-white);
+        color: var(--color-independence);
+      }
+    }
+
+    &__secondary {
+      background-color: var(--color-ghost-white);
+      color: var(--color-independence);
+
+      &:hover {
+        background-color: var(--color-ghost-white);
+        color: var(--color-independence);
+      }
+    }
+  }
+}

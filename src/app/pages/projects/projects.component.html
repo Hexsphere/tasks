@@ -1,0 +1,25 @@
+<section class="component projects">
+  <div class="component--header">
+    <h2>Projects</h2>
+
+    <button class="component--btn" (click)="toggleModal('new project', true)">
+      New project
+    </button>
+  </div>
+
+  <ng-scrollbar
+    *ngIf="projects && projects.length > 0"
+    class="component--scrollbar"
+  >
+    <div class="projects--box">
+      <app-project
+        #project
+        *ngFor="let project of projects"
+        [project]="project"
+        [tasks]="tasks"
+      ></app-project>
+    </div>
+  </ng-scrollbar>
+
+  <h1 *ngIf="projects.length < 1">No projects yet!</h1>
+</section>
